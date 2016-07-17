@@ -1,0 +1,66 @@
+	<div id="hauptinformationprodukte">
+	
+	<form action="gaestebucheintrag.php" method="post">
+  <tr>
+  <td width="150">Name</td> 
+  <td><input type="Text" size="30" name="name"></td>
+  </tr>
+  </br>
+  <tr>
+  <td width="150">Eintrag</td> 
+  <td><textarea name="eintrag" rows="10" cols="50"></textarea></td>
+  </tr>
+</br>
+<input type="Submit" value="senden">
+</br>
+  <input type="Reset" value="zurücksetzen"></tr>
+</form>
+	
+
+
+	<?php
+				include("datenbankaufruf.php"); 
+				
+
+
+
+		// SQL-Befehl für den Zugriff
+		$sql = "
+			SELECT
+				*
+			FROM gaestebuch
+			ORDER BY date
+		";
+		 
+		// ausführen des mysql-Befehls
+		$db_erg = mysqli_query( $db_link, $sql );
+		if ( ! $db_erg )
+		{
+			die('Ungültige Abfrage: ' . mysql_error());
+		}
+
+while ($daten = mysqli_fetch_array( $db_erg, MYSQL_ASSOC))
+{
+    // Aushabe der Daten
+ 
+    echo "Name: ";
+    echo $daten['name'];
+    echo "<br />";
+ 
+    echo "Datum: ";
+    echo $daten['date'];
+    echo "<br />";
+ 
+    echo "Gästebucheintrag: ";
+    echo $daten['eintrag'];
+    echo "<br />";
+	echo "<br />";
+}
+
+
+
+
+	?>
+	
+	
+	</div>

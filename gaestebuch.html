@@ -1,0 +1,25 @@
+	<div id="hauptinformationprodukte">
+
+	<?php
+				include("datenbankaufruf.php"); 
+				
+				$sql = "
+			SELECT
+				*
+			FROM gaestebuch
+			ORDER BY datum
+		";
+		 
+		// ausführen des mysql-Befehls
+		$db_erg = mysqli_query( $db_link, $sql );
+		if ( ! $db_erg )
+		{
+			die('Ungültige Abfrage: ' . mysql_error());
+		}
+
+		$anzahl_eintraege = mysqli_num_rows($db_erg);
+		echo "<p>Anzahl der Gästebuch-Einträge: $anzahl_eintraege </p>";
+	?>
+	
+	
+	</div>

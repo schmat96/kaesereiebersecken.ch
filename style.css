@@ -1,0 +1,798 @@
+
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+/* Globals und Typo 
+--------------------------------------------------------------------------------------- */
+
+html {
+
+
+/* Wahlweise Grid-Hintergrund
+Rasterhintergrund, der die Breite bis 100 Pixel und eine Höhe bis 950 Pixel anzeigt. Die Breite von 960 Pixel ist markiert. Der Hintergrund ist transparent, muss also nicht nur mit #fff verwendet werden. Es wird eine Schriftgröße von 75% oder 12px festgelegt.
+	background: #fff url(bilder/grid.png) top left no-repeat;
+*/	
+	background: #cc9966;
+	font-size: 75%;
+}
+
+html>body {
+	font-size: 14px;
+}
+
+body {
+/* Wahlweise Linienhintergrund
+Linienhintergrund abgestimmt auf eine Schriftgröße von 12px.	
+	background: transparent url(bilder/line-height.gif) top left;
+	*/	
+	background: #cc9966;
+	font-size: 14px;
+	line-height: 1.43em;	
+	font-family: Georgia, "Times New Roman", Times, serif;	
+	text-align:center;	
+}
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	text-align: left;
+}
+
+h1 {
+font-size: 0px;
+}
+
+
+a:link {
+	color: #B11F32;
+	text-decoration: none;
+	border-bottom: none;
+}
+
+a:visited {
+	color: #5B2C26;
+	text-decoration: none;
+	border-bottom: none;	
+}
+
+a:hover {
+	text-decoration: underline;
+	border-bottom: none;	
+}
+
+#hauptinformation a:link, #nebeninformation a:link {
+	border-bottom: 1px solid #B11F32;	
+}
+
+#hauptinformation a:visited, #nebeninformation a:visited {
+	border-bottom: 1px solid #5B2C26;	
+}
+
+#hauptinformation a:hover, #nebeninformation a:hover {
+	text-decoration: none;
+	border-bottom: 1px solid #000;
+	background: #FFF1DB;		
+}
+
+a.randlos {
+	border-bottom: none !important;
+}
+
+/* Macht die gepunktete Linie um geklickte Links unsichtbar
+--------------------------------------------------------------------------------------- */
+
+a:focus {
+	outline: none;
+}
+
+/* Vertikaler Rhythmus basierend auf 14px Basisgröße für den Fließtext
+--------------------------------------------------------------------------------------- */
+
+p {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	margin-top: 1.43em;
+	margin-bottom: 0.65em;
+}
+
+h1 {
+	padding: 61px 0 29px 20px;
+	margin: 0;
+}
+
+h1 span {
+	display: none;
+}
+
+h2 {
+	font: 1.43em/1.1em Georgia, "Times New Roman", Times, serif;
+	margin-top: 1.43em;
+	margin-bottom: 0.65em;
+}
+
+#metainformation h2 {
+	background: #ffebcc;
+	font: normal 2.3em/1 Georgia, "Times New Roman", Times, serif;
+	color: #774C20;
+	padding: 50px 20px 5px 20px;
+	width: 100%;
+	
+	float: left;
+	margin: 0;
+}
+
+#metainformation h2 span {
+	font: italic 0.5em/1 Georgia, "Times New Roman", Times, serif;
+	display: block;
+	float: left;
+	padding: 10px 20px 10px 0;
+	color: #C8945C;
+	letter-spacing: 0.3em;
+}
+
+h3 {
+	font: 1.29em/1.2em Georgia, "Times New Roman", Times, serif;
+	margin-top: 1.43em;
+	margin-bottom: 0.65em;
+	color: #774C20;
+	border-bottom: 1px dotted #cc9966;
+}
+
+h4 {
+	font: 1.14em/1.42em Georgia, "Times New Roman", Times, serif;
+	margin-top: 1.43em;
+	margin-bottom: 0.65em;
+}
+
+/* Bilder und verlinkte Bilder ohne Rahmen 
+--------------------------------------------------------------------------------------- */
+
+img, a img {
+	border: none;
+}
+
+/* Links- bzw. Rechtsausrichtung für Elemente
+--------------------------------------------------------------------------------------- */
+
+.link {
+	float: left;
+	margin: 0 0.5em 0 0;
+}
+
+.rechts {
+	float: right;
+	margin: 0 0 0 0.5em;
+}
+
+/* Layoutelemente
+Verwenden Sie overflow: hidden; um nötige Foats aufzulösen.
+--------------------------------------------------------------------------------------- */
+
+
+#nav {
+	display: none;
+}
+
+#wrapper {
+	width: 100%;
+
+}
+
+
+#wrapperoben {
+	margin: 0 auto;
+	width: 60%;
+	min-width: 800px;
+	background: #FFEBCC 585px 320px no-repeat;
+	left: 20%;
+	right: 20%;
+}
+
+#wrapperunten {
+	margin: 0 auto;
+	width: 60%;
+	min-width: 800px;
+	background: #FFEBCC 585px 320px no-repeat;	
+	overflow: hidden;
+	position: relative;
+}
+
+#metainformation {
+	background: #663333  top left no-repeat;
+	width: 100%;
+}
+
+#menue {
+	display: none;
+}
+
+#menue2 {
+	display: none;
+}
+
+#navigation {
+	background: #582007  top left repeat-x;
+	float: left;
+	width: 100%;
+}
+
+
+
+#navigation li {
+	float: left;
+	list-style-type: none;
+}
+
+#logo {
+
+	width: 100%;
+	height: 210px;
+	top: 0px;
+}
+
+#abstand {
+	height: 30px;
+}
+
+#navigation li a, #navigation li a:visited {
+	background: #CF9B5F bottom left repeat-x;
+	color: #ffcc99;
+	float: left;
+	margin: 0;
+	padding: 15px;
+	text-align: center;
+	text-transform: uppercase;
+	border-left: 1px solid #663333;
+	border-right: 1px solid #ffcc99;
+	position: relative;
+	z-index: 1000;	
+}
+
+#navigation img {
+	
+	display: none;
+
+}
+
+#navigation li a:hover {
+	background: #58210c bottom left repeat-x;
+	text-decoration: underline;
+}
+
+#navigation li a.active {
+	background: #FFEBCC top left repeat-x;
+	color: #000;
+	text-decoration: underline;
+}
+
+body#start a#homenav, body#dummy a#dummynav-1, body#dummy a#dummynav-2, body#dummy a#dummynav-3, body#dummy a#dummynav-4 { 
+	background: #FFEBCC url(bilder/nav-active.jpg) top left repeat-x;
+	color: #000;
+	text-decoration: underline;
+}
+
+#hauptinformation {
+	width: 60%;
+	padding: 0 0 10px 10px;
+	float: left;
+	margin: 10px;
+}
+
+#hauptinformationprodukte {
+	width: 60%;
+	padding: 0 0 10px 10px;
+	float: left;
+	margin: 10px;
+}
+
+#nebeninformation {
+
+	float: right;
+	width: 30%;
+	padding: 0 20px 20px 0;
+	display: inline-block;
+}
+
+#shopprodukte {
+	width: 100%;
+	padding: 0.8em #8c8c8c;
+}
+
+#fotoslider  {
+width: 100%;
+margin: 0px;
+}
+
+#balken {
+	z-index: 1;
+	position: absolute;
+	top:0px;
+	right:1600px;
+	width: 100%;
+}
+
+#slideshow {
+	width: 100%;
+}
+
+#text img {
+	z-index:2;
+}
+
+#logo {
+	width: 100%;
+	height: 250px;
+	top: 0px;
+	position: inline;
+}
+
+#logo img{
+  display: block;
+  height: 240px;
+  top: 0px;
+  }
+
+#trenner {
+width: 3%
+clear: both;
+ }
+ 
+ #produkte li {
+	width: 100%;
+	height: 200px;
+	float: left;
+	list-style: none;
+    display: inline;
+	border: none;
+	margin: 0px 0px 20px 10px;
+	}
+	
+#produkte h1 {
+ 	font: 1.43em/1.1em Georgia, "Times New Roman", Times, serif;
+	margin: 0px;
+	padding: 5px 0px 0px 10px;
+	}
+	
+	#produkte h1 span{
+ 	font: italic 0.5em/1 Georgia, "Times New Roman", Times, serif;
+	margin: 0px;
+	}
+	
+#produkte h2 {
+	font: italic 1.2em/1 Georgia, "Times New Roman", Times, serif;
+	margin-top: 0.43em;
+	margin-bottom: 0.65em;
+	float:left;
+	width: 65%;
+	}
+
+#produkte h4 {
+	margin: 20px;
+	float: middle;
+	}
+	
+#produkte img {
+	float: right;
+	width: 30%;
+	max-width: 300px;
+	padding: 1px;
+	}
+
+
+
+#shopprodukte li {
+	width: 100%;
+	height: 200px;
+	float: left;
+	list-style: none;
+    display: inline;
+	border: solid;
+	margin: 0px 0px 20px 10px;
+	}
+	
+#shopprodukte h1 {
+ 	font: 1.43em/1.1em Georgia, "Times New Roman", Times, serif;
+	margin: 0px;
+	padding: 5px 0px 0px 10px;
+	}
+	
+	#shopprodukte h1 span{
+ 	font: italic 0.5em/1 Georgia, "Times New Roman", Times, serif;
+	margin: 0px;
+	}
+	
+#shopprodukte h2 {
+	font: italic 1.2em/1 Georgia, "Times New Roman", Times, serif;
+	margin-top: 0.43em;
+	margin-bottom: 0.65em;
+	float:right;
+	display: inline;
+	}
+
+#shopprodukte h4 {
+	margin: 20px;
+		float: middle;
+	}
+	
+#shopprodukte img {
+	display: inline;
+	float: right;
+	width: 200px;
+	padding: 1px;
+	}
+	
+/* Details */
+
+summary {
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+  display: inline-block;
+  background-color: #eee;
+  padding: 8px;
+  border-radius: 5px;
+  line-height: 1em;
+  border: 1px solid #ddd;
+}
+
+div.trenner {
+	background: transparent url(bilder/trenner.jpg) 50% 50% no-repeat;
+	height: 36px;
+	clear: both;
+	padding: 10px;
+}
+
+div.trenner hr {
+	display: none
+}
+
+.illustrativ {
+	background: #CC9966;
+	border: 1px solid #FFF6E8;
+	padding: 10px;
+}
+
+.liste li {
+	background: transparent url(bilder/bullet.jpg) 0 8px no-repeat;
+	padding: 5px 0 5px 20px;
+	border-bottom: 1px solid #ffcc99;
+	list-style-type: none;
+}
+
+
+
+#nebeninformation ul li {
+	list-style-type: none;
+	border-bottom: 1px solid #cc9966;
+	padding: 15px 0;
+	overflow: hidden;
+}
+
+#nebeninformation p {
+	margin: 0;
+	padding: 0;
+}
+
+div .slider_admin  {
+	float: right;
+}
+
+
+
+p.angebot {
+	color: #663333;
+	background: #f3debd;
+	padding: 10px !important;
+	margin: 20px 20px 0 20px;
+	border-top: 1px solid #f3debd;
+	border-left: 1px solid #f3debd;
+	border-right: 1px solid #f3debd;
+}
+
+.angebot .foto {
+	padding: 0 15px 15px 0;
+	float: left;
+}
+
+.angebot strong {
+	font: 1.5em/1em Georgia, "Times New Roman", Times, serif;
+	color: #ae620e;
+	display: block;
+	margin: 0 0 5px 0;
+}
+
+.details {
+	clear: both;
+	float: right;
+	background: #f3debd url(bilder/verlauf-angebot.jpg) bottom left repeat-x;
+	padding: 10px 20px !important;
+	margin: 0 0 20px 0;
+	border-left: 1px solid #f3debd;
+	border-right: 1px solid #f3debd;
+}
+
+.details a:link, .details a:visited {
+	color: #aa0034;
+}
+
+.vcard {
+	margin: 10px 0;
+}
+
+.vcard img {
+display: none;	
+}
+
+#siteinformation {
+	clear: both;
+	background: #5e2f2f url(bilder/footer-bg.jpg) top left repeat-x;
+	padding: 20px;
+	color: #ffcc99;
+}
+
+#geschaeftverkauf {
+	padding: 20px;
+}
+
+/* PopUpFenster */
+
+    /* Контейнер */
+.modal {
+
+/* Слой перекрытия */
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: rgba(0,0,0,0.5);
+z-index: 10000;
+
+/* Трансформации прозрачности при открытии  */
+-webkit-transition: opacity 500ms ease-in;
+-moz-transition: opacity 500ms ease-in;
+transition: opacity 500ms ease-in;
+
+/* Скрываем изначально */
+opacity: 0;
+pointer-events: none;
+}
+
+/* Показываем модальное окно */
+.modal:target {
+opacity: 1;
+pointer-events: auto;
+}
+
+/* Содержание */
+.modal > div {
+width: 500px;
+background: #fff;
+position: relative;
+margin: 10% auto;
+
+/* По умолчанию минимизируем анимацию */
+-webkit-animation: minimise 500ms linear;
+
+/* Придаем хороший вид */
+padding: 30px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+-webkit-box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+-moz-box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+background: -moz-linear-gradient(#fff, #ccc);
+background: -webkit-gradient(linear, right bottom, right top, color-stop(1, rgb(255,255,255)), color-stop(0.57, rgb(230,230,230)));
+text-shadow: 0 1px 0 #fff;
+}
+
+/* Изменяем анимацию при открытии модального окна*/
+.modal:target > div {
+-webkit-animation-name: bounce;
+}
+
+.modal h2 {
+font-size: 36px;
+padding: 0 0 20px;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+  	-webkit-transform: scale3d(0.1,0.1,1);
+  	-webkit-box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+  }
+  55% {
+  	-webkit-transform: scale3d(1.08,1.08,1);
+  	-webkit-box-shadow: 0 10px 20px rgba(0,0,0,0);
+  }
+  75% {
+  	-webkit-transform: scale3d(0.95,0.95,1);
+  	-webkit-box-shadow: 0 0 20px rgba(0,0,0,0.9);
+  }
+  100% {
+  	-webkit-transform: scale3d(1,1,1);
+  	-webkit-box-shadow: 0 3px 20px rgba(0,0,0,0.9);
+  }
+}
+
+@-webkit-keyframes minimise {
+  0% {
+  	-webkit-transform: scale3d(1,1,1);
+  }
+  100% {
+  	-webkit-transform: scale3d(0.1,0.1,1);
+  }
+}
+
+
+.modal a[href="#close"] {
+position: absolute;
+right: 0;
+top: 0;
+color: transparent;
+}
+
+/* Сбрасываем изменения */
+.modal a[href="#close"]:focus {
+outline: none;
+}
+
+/* Создаем кнопку Закрыть */
+.modal a[href="#close"]:after {
+content: 'X';
+display: block;
+
+/* Позиционируем */
+position: absolute;
+right: -10px;
+top: -10px;
+width: 1.5em;
+padding: 1px 1px 1px 2px;
+
+/* Стили */
+text-decoration: none;
+text-shadow: none;
+text-align: center;
+font-weight: bold;
+background: #000;
+color: #fff;
+border: 3px solid #fff;
+-moz-border-radius: 20px;
+border-radius: 20px;
+-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.modal a[href="#close"]:focus:after,
+.modal a[href="#close"]:hover:after {
+-webkit-transform: scale(1.1,1.1);
+-moz-transform: scale(1.1,1.1);
+}
+
+.modal a[href="#close"]:focus:after {
+outline: 1px solid #000;
+}
+
+/* Открываем модальное окно */
+a.openModal {
+margin: 1em auto;
+width: 200px;
+background: #ccc;
+text-align: center;
+padding: 10px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+background: -moz-linear-gradient(#fff, #ddd);
+background: -webkit-gradient(linear, right top, right bottom, from(rgb(255,255,255)), to(rgb(230,230,230)));
+text-shadow: 0 1px 0 #fff;
+border: 1px solid rgba(0,0,0,0.1);
+-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+-moz-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+a.openModal:hover,
+a.openModal:focus {
+background: -moz-linear-gradient(#fff, #ccc);
+background: -webkit-gradient(linear, right top, right bottom, from(rgb(255,255,255)), to(rgb(200,200,200)));
+}
+
+    body {
+      -webkit-font-smoothing: antialiased;
+      font: normal 15px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #232525;
+    }
+
+    #slides {
+	  margin: 0px;
+    }
+
+    #slides .slidesjs-navigation {
+      margin-top:5px;
+	  
+    }
+
+    a.slidesjs-next,
+    a.slidesjs-previous,
+    a.slidesjs-play,
+    a.slidesjs-stop {
+      background-image: url(images/btns-next-prev.png);
+      background-repeat: no-repeat;
+      width:12px;
+      height:18px;
+      text-indent: -9999px;
+      float: left;
+      margin-right:5px;
+	  top: auto;
+    }
+
+    a.slidesjs-next {
+      margin-right:10px;
+      background-position: -12px 0;
+    }
+
+    a:hover.slidesjs-next {
+      background-position: -12px -18px;
+    }
+
+    a.slidesjs-previous {
+      background-position: 0 0;
+    }
+
+    a:hover.slidesjs-previous {
+      background-position: 0 -18px;
+    }
+
+    a.slidesjs-play {
+      width:15px;
+      background-position: -25px 0;
+    }
+
+    a:hover.slidesjs-play {
+      background-position: -25px -18px;
+    }
+
+    a.slidesjs-stop {
+      width:18px;
+      background-position: -41px 0;
+    }
+
+    a:hover.slidesjs-stop {
+      background-position: -41px -18px;
+    }
+
+    .slidesjs-pagination {
+      margin: 7px 0 0;
+      float: right;
+      list-style: none;
+    }
+
+    .slidesjs-pagination li {
+      float: left;
+      margin: 0 1px;
+    }
+
+    .slidesjs-pagination li a {
+      overflow: hidden;
+    }
+
+    .navbar {
+      overflow: hidden
+    }
+  </style>
+  <!-- End SlidesJS Optional-->
+
+  <!-- SlidesJS Required: These styles are required if you'd like a responsive slideshow -->
+  <style>
+    #slides {
+      display: none
+    }
+
+    .container {
+      margin: 0px;
+		width: 100%;
+		padding: auto;
+    }
+
